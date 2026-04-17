@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  kime-bot:
+    build: .
+    container_name: gmgn-kime-ai
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - GMGN_API_KEY=${GMGN_API_KEY}
+      - GMGN_API_BASE_URL=${GMGN_API_BASE_URL:-https://api.gmgn.ai/v1}
+      - RPC_URL=${RPC_URL:-https://rpc.solana.com}
+      - CHAIN=${CHAIN:-solana}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - WALLET_PRIVATE_KEYS=${WALLET_PRIVATE_KEYS}
+      - WALLET_ADDRESSES=${WALLET_ADDRESSES}
+      - MIN_BUY_AMOUNT=${MIN_BUY_AMOUNT:-10}
+      - MAX_BUY_AMOUNT=${MAX_BUY_AMOUNT:-100}
+      - TAKE_PROFIT_PERCENT=${TAKE_PROFIT_PERCENT:-500}
+      - STOP_LOSS_PERCENT=${STOP_LOSS_PERCENT:-50}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - kime-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: kime-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - kime-network
+    volumes:
+      - redis-data:/data
+
+networks:
+  kime-network:
+    driver: bridge
+
+volumes:
+  redis-data:
