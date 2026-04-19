@@ -10,7 +10,7 @@ class Config:
 
     # GMGN API 配置
     GMGN_API_KEY = os.getenv("GMGN_API_KEY", "")
-    GMGN_API_BASE_URL = os.getenv("GMGN_API_BASE_URL", "https://api.gmgn.ai/v1")
+    GMGN_API_BASE_URL = os.getenv("GMGN_API_BASE_URL", "https://openapi.gmgn.ai/v1")
 
     # 区块链配置
     RPC_URL = os.getenv("RPC_URL", "https://rpc.solana.com")

@@ -9,7 +9,7 @@ services:
       - "8000:8000"
     environment:
       - GMGN_API_KEY=${GMGN_API_KEY}
-      - GMGN_API_BASE_URL=${GMGN_API_BASE_URL:-https://api.gmgn.ai/v1}
+      - GMGN_API_BASE_URL=${GMGN_API_BASE_URL:-https://openapi.gmgn.ai/v1}
       - RPC_URL=${RPC_URL:-https://rpc.solana.com}
       - CHAIN=${CHAIN:-solana}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

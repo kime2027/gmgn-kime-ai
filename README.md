@@ -48,7 +48,7 @@ GMGN Kime AI
 最速启动
 
 1. 克隆项目
-2. 运行启动脚本
+2. 运行启动脚本（首次运行会进行交互式配置）
 3. 打开浏览器
 
 ```bash
@@ -57,6 +57,14 @@ cd gmgn-skills/gmgn-kime-ai
 chmod +x startup.sh
 ./startup.sh
 ```
+
+**注意：** 首次运行时，脚本会自动启动配置向导，要求您输入必要的配置信息，包括：
+- GMGN API Key
+- Telegram Bot Token 和 Chat ID
+- 钱包私钥和地址
+- 交易参数等
+
+配置完成后，应用将自动启动。
 
 在浏览器中打开：
 

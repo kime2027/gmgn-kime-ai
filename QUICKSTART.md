@@ -263,7 +263,7 @@ docker-compose restart
 
 遇到问题？
 
-1. 查看 [FAQ](README_DEV.md#常见问题)
+1. 查看 [FAQ](README_DEV.md)
 2. 搜索已有 [Issues](https://github.com/GMGNAI/gmgn-skills/issues)
 3. 创建新 Issue 描述问题
 4. 加入 Telegram 群组寻求帮助
